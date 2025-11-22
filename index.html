@@ -1,0 +1,169 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>A Tri-Modal Dataset and a Baseline System for Tracking Unmanned Aerial Vehicles</title>
+  <!--=================Meta tags==========================-->
+  <meta name="robots" content="index,follow">
+  <meta name="description"
+    content="A Tri-Modal Dataset and a Baseline System for Tracking Unmanned Aerial Vehicles">
+  <meta name="keywords" content="visual object tracking, Visual-thermal-event, Anti-UAV, Tri-modal tracking, RGB-E, RGB-T">
+  <link rel="author" href="https://github.com/xuefeng-zhu5">
+  <!--=================js==========================-->
+  <link href="./css.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="style.css" media="screen">
+  <script src="./effect.js "></script>
+  <!-- Latex -->
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+        TeX: { equationNumbers: { autoNumber: "AMS" } },
+      });
+      </script>
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
+    </script>
+  <!--=================Google Analytics==========================-->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-129775907-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-129775907-1');
+  </script>
+</head>
+
+<body>
+  <div id="content">
+    <div id="content-inner">
+      <div class="section head">
+        <h1>
+          Tri-Modal Dataset and a Baseline System for Tracking Unmanned Aerial Vehicles
+        </h1>
+
+        <!--=================Authors==========================-->
+        <div class="authors">
+            <a href="https://github.com/XU-TIANYANG" target="_blank">Tianyang Xu</a> <sup>1, *</sup>
+            <a href="" target="_blank">Jinjie Gu</a> <sup>1</sup>
+          <a href="https://github.com/xuefeng-zhu5" target="_blank">Xue-Feng Zhu</a> <sup>1</sup>
+          <a href="https://scholar.google.com/citations?user=5IST34sAAAAJ&hl=en" target="_blank">Xiao-Jun Wu</a> <sup>1</sup>
+          <a href="https://scholar.google.com/citations?user=pk-yb_kAAAAJ&hl=en" target="_blank">Josef Kittler</a>
+          <sup>2</sup> &nbsp;&nbsp;&nbsp;&nbsp;
+        </div>
+
+        <div class="affiliations ">
+          <sup>1</sup> Jiangnan University
+          <sup>2</sup> University of Surrey <br>
+        </div>
+
+<!--=================Tabs==========================-->
+        <ul id="tabs">
+          <li><a href="#Highlights" name="#tab1">Highlights</a></li>
+          <li><a href="#Download" name="#tab2">Download</a></li>
+          <li><a href="#Evaluation & Results" name="#tab3">Evaluation & Results</a></li>
+          <li><a href="#Citation" name="#tab4">Citation</a></li>
+          <li><a href="#Contact" name="#tab5">Contact</a></li>
+      </div>
+      <br>
+      <!--=================Teasers==========================-->
+      <div id="img_intro_examples" class="img_container">
+        <center><img src="./figs/Dataset-example.png" border="0" width="90%"></center>
+      </div>
+
+<!--       &lt;!&ndash;=================News==========================&ndash;&gt;-->
+<!--      <div class="section Highlights", id="Highlights">-->
+<!--        <h2><font color="red">News</font></h2>-->
+<!--        <ol>-->
+<!--          <li>05/11/2025: The RGBDT500 dataset is released at <a href="https://drive.google.com/drive/folders/1UAe_maNR_ukYgtBrmeqiv87WhW28yK9r?usp=drive_link">Google Drive</a></td>. </li>-->
+<!--          <li>05/11/2025: A baseline method RDTTrack for tri-modal tracking is released at <a href="https://github.com/xuefeng-zhu5/RDTTrack">GitHub Page</a></td>. </li>-->
+<!--          <li>07/29/2025: The Evaluation Toolkit and results of 17 trackers are released at <a href="https://github.com/xuefeng-zhu5/RGBDT500_Evaluation_Toolkit">GitHub Page</a></td>. </li>-->
+<!--        </ol>-->
+<!--      </div>-->
+
+      <!--=================Highlights==========================-->
+      <div class="section Highlights", id="Highlights">
+        <h2>Highlights</h2>
+        <ol>
+          <li><i><b><big>More modalities </big></b></i>: RGB, Thermal Infrared, and Event </li>
+          <li><i><b><big>Large-scale dataset </big></b></i>: 1,321 tri-modal sequences, 2.8M annotated frames </li>
+          <li><i><b><big>Comprehensive evaluation</big></b></i>: Anti-UAV tracking, Multi-object tracking  </li>
+          <li><i><b><big>Generic scene</big></b></i>: >30 scenes </li>
+        </ol>
+      </div>
+
+       <!--================Obejct category==========================-->
+      <div id="object_category" class="img_container">
+        <center><img src="./figs/temporal distribution.png" border="0" width="85%"></center>
+          <center><img src="./figs/Spatial distribution.png" border="0" width="85%"></center>
+      </div>
+
+      <!--=================Abstract==========================-->
+      <div class="section abstract">
+        <h2>Abstract</h2>
+        <br>
+        <p style="text-align:justify">
+          With the proliferation of low altitude unmanned aerial vehicles (UAVs), visual multi-object tracking is becoming a critical security technology, demanding significant robustness even in complex environmental conditions.
+          However, tracking UAVs using a single visual modality often fails in challenging scenarios, e.g., such as low illumination, cluttered backgrounds, and rapid motion.
+          Although multi-modal multi-object UAV tracking is more resilient, the development of effective solutions has been hindered by the absence of dedicated public datasets.
+          To bridge this gap, we release MM-UAV, the first large-scale benchmark for Multi-Modal UAV Tracking, integrating three key sensing modalities, i.e., RGB, infrared (IR), and event signals.
+The dataset spans over 30 challenging scenarios, with 1,321 synchronised multi-modal sequences, and more than 2.8 million annotated frames.
+Accompanying the dataset, we provide a novel multi-modal multi-UAV tracking framework, designed specifically for UAV tracking applications and serving as a baseline for future research.
+Our framework incorporates two key technical innovations, \ie an offset-guided adaptive alignment module to resolve spatio mismatches across sensors, and an adaptive dynamic fusion module to balance complementary information conveyed by different modalities.
+Furthermore, to overcome the limitations of conventional appearance modelling in multi-object tracking, we introduce an event-enhanced association mechanism that leverages motion cues from the event modality for more reliable identity maintenance.
+Comprehensive experiments demonstrate that the proposed framework consistently outperforms state-of-the-art methods, particularly in challenging visual conditions, achieving breakthrough performance in complex low-altitude environments.
+        </p>
+      </div>
+
+      <!--=================Downloads==========================-->
+             <!--=================Abstract==========================-->
+      <div class="section Download">
+        <h2>Download</h2>
+        <br>
+        <p style="text-align:justify">
+         The dataset will be released soon.
+        </p>
+      </div>
+
+
+     <!--=================Experiments==========================-->
+      <div class="section Evaluation & Results" , id="Evaluation & Results">
+        <h2>Evaluation & Results</h2>
+        <p style="text-align:justify">
+        For evaluation, the Area Under Curve (AUC) and Distance Precision (DP) of precision and success plots are adopted.
+        The Evaluation Toolkit and results of 17 trackers are released at <a href="https://github.com/xuefeng-zhu5/RGBDT500_Evaluation_Toolkit">GitHub Page</a></td>.
+        </p>
+        <div id="img_intro_examples" class="img_container">
+          <center><img src="./figs/results.png" border="0" width="90%"></center>
+        </div>
+        <br />
+     </div>
+
+      <!--=================Citation==========================-->
+      <div class="section Citation" , id="Citation">
+        <h2>Citation</h2>
+        <div class="section bibtex">
+          <pre>@article{Xu_MM-UAV,
+  author = {Tianyang Xu and Jinjie Gu and Xue-Feng Zhu and Xiao-Jun Wu and Josef Kittler},
+  title = {A Tri-Modal Dataset and a Baseline System for Tracking Unmanned Aerial Vehicles},
+  year = {2025}
+}
+          </pre>
+        </div>
+     </div>
+      <!--=================Contact==========================-->
+      <div class="section contact", id="Contact">
+        <h2 id="contact">Contact</h2>
+        <p style="text-align:justify">If you have any question, please contact us at
+          <strong>tianyang.xu@jiangnan.edu.cn</strong>.</p>
+      </div>
+</body>
+
+</html>
+
