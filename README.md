@@ -11,7 +11,7 @@
 * **_Generic scene and diverse object category_**: >30 scenes
 
 ## Download from Google Drive or Baidu Cloud.
-Dataset will be released soon.
+The dataset can be obtained from [Baidu Cloud](https://pan.baidu.com/s/1xYzvams9X972rGBm-RgY_g?pwd=mmmm ).
 
 
 ## Baseline method
